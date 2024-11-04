@@ -9,11 +9,14 @@ export class User {
     @Column()
     fullname: string;
 
+    // @Column({ unique: true })
+    // username: string;
+
     @Column()
     email: string;
 
     // Por motivos de simplicidad, vamos a guardar la contraseña en texto plano
-    @Column()
+    @Column({ nullable: false })
     pass: string;
 
     @OneToMany(() => Task, (task) => task.owner)
